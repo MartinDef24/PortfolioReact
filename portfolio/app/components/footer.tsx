@@ -1,6 +1,7 @@
 import { Dot } from "lucide-react";
 import Image from "next/image";
 import github from "../assets/img/github.png";
+import linkedin from "../assets/img/linkedin.png";
 
 export function Footer() {
 	return (
@@ -10,20 +11,36 @@ export function Footer() {
 					<Dot className="size-10 text-gray-300" />
 					Suivez moi
 				</h3>
-				<a
-					className="flex"
-					target="_blank"
-					href="https://github.com/MartinDef24"
-					rel="noopener"
-				>
-					<Image
-						alt=""
-						width={30}
-						height={15}
-						className="rounded-full my-auto"
-						src={github}
-					/>
-				</a>
+				<div className="flex gap-3">
+					<a
+						className="flex"
+						target="_blank"
+						href="https://www.linkedin.com/in/defachelles-martin/"
+						rel="noopener"
+					>
+						<Image
+							alt=""
+							width={30}
+							height={15}
+							className="rounded-full my-auto"
+							src={linkedin}
+						/>
+					</a>
+					<a
+						className="flex"
+						target="_blank"
+						href="https://github.com/MartinDef24"
+						rel="noopener"
+					>
+						<Image
+							alt=""
+							width={30}
+							height={15}
+							className="rounded-full my-auto"
+							src={github}
+						/>
+					</a>
+				</div>
 			</div>
 		</div>
 	);

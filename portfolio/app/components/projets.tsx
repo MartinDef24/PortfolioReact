@@ -33,9 +33,9 @@ export function ProjectList() {
 			</div>
 
 			<div className="flex flex-col gap-3">
-				{dataFiltered.map((item) => (
+				{dataFiltered.map((item, index) => (
 					<div
-						key={item.Id}
+						key={`${item.Id}-${index}`}
 						className="p-5 bg-white rounded-lg flex hover:ring-1 hover:ring-gray-400"
 					>
 						<div className="w-9/10">
