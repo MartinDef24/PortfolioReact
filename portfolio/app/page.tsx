@@ -22,9 +22,9 @@ export default function Home() {
 	};
 
 	return (
-		<>
+		<main className="w-2/5 mx-auto max-xl:w-3/5 max-lg:w-4/5 max-md:w-9/10">
 			<Header />
-			<div className="h-fit p-2 text-gray-500 w-2/5 bg-white mb-2 mx-auto rounded-xl max-sm:w-full">
+			<div className="h-fit p-2 text-gray-500 bg-white mb-2 rounded-xl shadow-sm">
 				<div className="flex justify-between w-full mb-5 pt-6 pr-6 pl-2 items-center">
 					<h1 className="flex text-2xl text-montserrat items-center">
 						<Dot className="size-10 text-gray-300" />
@@ -76,6 +76,6 @@ export default function Home() {
 				<Footer />
 			</div>
 			<Toaster richColors />
-		</>
+		</main>
 	);
 }

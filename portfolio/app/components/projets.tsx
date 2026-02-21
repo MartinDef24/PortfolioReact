@@ -1,6 +1,7 @@
 "use client";
 import { RiArrowRightSLine } from "@remixicon/react";
 import { Dot } from "lucide-react";
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useProject } from "../fetch/projet";
 import { Button } from "./generic/button";
@@ -10,11 +11,7 @@ export function ProjectList() {
 	const [showAll, setShowAll] = useState<boolean>(false);
 
 	const dataFiltered = useMemo(() => {
-		if (showAll) {
-			return data;
-		} else {
-			return data.slice(0, 3);
-		}
+		return showAll ? data : data.slice(0, 3);
 	}, [showAll, data]);
 
 	return (
@@ -34,9 +31,10 @@ export function ProjectList() {
 
 			<div className="flex flex-col gap-3">
 				{dataFiltered.map((item, index) => (
-					<div
+					<Link
 						key={`${item.Id}-${index}`}
-						className="p-5 bg-white rounded-lg flex hover:ring-1 hover:ring-gray-400"
+						href={`/${item.Slug}`}
+						className="p-5 bg-white rounded-lg flex hover:ring-1 hover:ring-gray-400 cursor-pointer"
 					>
 						<div className="w-9/10">
 							<h4 className="first-letter:uppercase text-xl font-bold">
@@ -47,7 +45,7 @@ export function ProjectList() {
 						<div className="my-auto flex justify-end w-1/10">
 							<RiArrowRightSLine className="size-8" />
 						</div>
-					</div>
+					</Link>
 				))}
 			</div>
 		</div>

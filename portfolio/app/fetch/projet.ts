@@ -25,5 +25,13 @@ export function useProject() {
 		getData();
 	}, [getData]);
 
-	return { data };
+	const getProjectBySlug = useCallback(
+		async (slug: string) => {
+			await getData();
+			return data.find((p) => p.Slug === slug);
+		},
+		[getData, data],
+	);
+
+	return { data, getProjectBySlug };
 }
