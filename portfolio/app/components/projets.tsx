@@ -15,14 +15,14 @@ export function ProjectList() {
 	}, [showAll, data]);
 
 	return (
-		<div className="bg-gray-100 rounded-lg p-5 mb-5">
-			<div className="flex justify-between">
-				<h3 className="text-2xl text-gray-600 text-montserrat flex my-auto items-center mb-5 text-left">
-					<Dot className="size-10 text-gray-300" />
+		<div className="bg-gray-100 rounded-lg p-3 sm:p-5 mb-5">
+			<div className="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center mb-5">
+				<h3 className="text-xl sm:text-2xl text-gray-600 text-montserrat flex items-center text-left">
+					<Dot className="size-8 sm:size-10 text-gray-300 shrink-0" />
 					Mes expériences
 				</h3>
 				<Button
-					className="bg-white border-black border hover:bg-gray-50 text-black"
+					className="bg-white border-black border hover:bg-gray-50 text-black w-full sm:w-auto"
 					onClick={() => setShowAll(!showAll)}
 				>
 					{showAll ? "Voir moins" : "Voir plus"}
@@ -34,16 +34,18 @@ export function ProjectList() {
 					<Link
 						key={`${item.Id}-${index}`}
 						href={`/${item.Slug}`}
-						className="p-5 bg-white rounded-lg flex hover:ring-1 hover:ring-gray-400 cursor-pointer"
+						className="p-4 sm:p-5 bg-white rounded-lg flex gap-2 hover:ring-1 hover:ring-gray-400 cursor-pointer"
 					>
-						<div className="w-9/10">
-							<h4 className="first-letter:uppercase text-xl font-bold">
+						<div className="min-w-0 flex-1">
+							<h4 className="first-letter:uppercase text-lg sm:text-xl font-bold">
 								{item.Slug}
 							</h4>
-							<p className="truncate cursor-default">{item.Description}</p>
+							<p className="truncate cursor-default text-sm sm:text-base">
+								{item.Description}
+							</p>
 						</div>
-						<div className="my-auto flex justify-end w-1/10">
-							<RiArrowRightSLine className="size-8" />
+						<div className="my-auto flex justify-end shrink-0">
+							<RiArrowRightSLine className="size-6 sm:size-8" />
 						</div>
 					</Link>
 				))}

@@ -13,11 +13,11 @@ export function useProject() {
 			buildQuery<Project>({
 				entity: "Projects",
 				fields: ["Title", "Description", "Start", "End", "Slug"],
-				joins: ["Missions"],
-				joinFields: ["Missions.Description"],
+				joins: ["Missions", "TechnoProject,Technos"],
+				joinFields: ["Missions.Description", "Technos.Name"],
 			}),
 		)?.then((res) => {
-			if (res) setData(Object.values(res.Projects));
+			if (res?.Projects) setData(Object.values(res.Projects));
 		});
 	}, [get]);
 
