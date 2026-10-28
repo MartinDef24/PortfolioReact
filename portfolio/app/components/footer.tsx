@@ -6,12 +6,12 @@ import linkedin from "../assets/img/linkedin.png";
 export function Footer() {
 	return (
 		<div className="bg-gray-100 rounded-lg px-3 py-4">
-			<div className="flex justify-between pl-2">
-				<h3 className="text-2xl text-gray-600 text-montserrat flex my-auto items-center">
-					<Dot className="size-10 text-gray-300" />
+			<div className="flex justify-between items-center pl-1 sm:pl-2 gap-2">
+				<h3 className="text-xl sm:text-2xl text-gray-600 text-montserrat flex my-auto items-center">
+					<Dot className="size-8 sm:size-10 text-gray-300 shrink-0" />
 					Suivez moi
 				</h3>
-				<div className="flex gap-3">
+				<div className="flex gap-3 shrink-0">
 					<a
 						className="flex"
 						target="_blank"
@@ -21,8 +21,8 @@ export function Footer() {
 						<Image
 							alt=""
 							width={30}
-							height={15}
-							className="rounded-full my-auto"
+							height={30}
+							className="rounded-full my-auto size-[30px] w-auto h-auto"
 							src={linkedin}
 						/>
 					</a>
@@ -35,8 +35,8 @@ export function Footer() {
 						<Image
 							alt=""
 							width={30}
-							height={15}
-							className="rounded-full my-auto"
+							height={30}
+							className="rounded-full my-auto size-[30px] w-auto h-auto"
 							src={github}
 						/>
 					</a>
